@@ -56,6 +56,8 @@ export class TimerComponent implements OnInit {
   waitBtnClick(): void {
     if (!this.clickTimeout) {
       this.clickTimeout = true;
+
+      timer(500).subscribe(val => { this.clickTimeout = false; });
       return;
     }
 
